@@ -1,22 +1,23 @@
 import random
 def shellSort(alist):
-    sublistcount = len(alist)//2
-    while sublistcount > 0:
-      for startposition in range(sublistcount):
-        gapInsertionSort(alist,startposition,sublistcount)
-      print("After increments of size",sublistcount,"\nThe list is",alist)
-      sublistcount = sublistcount // 2
+    shag = len(alist)//2
+    while shag > 0:
+      for startposition in range(shag):
+        gapInsertionSort(alist,startposition,shag)
+      print("шаг",shag,"\nсписок",alist)
+      shag = shag // 2
 def gapInsertionSort(alist,start,gap):
     for i in range(start+gap,len(alist),gap):
-        currentvalue = alist[i]
+        element = alist[i]
         position = i
-        while position>=gap and alist[position-gap]>currentvalue:
+        while position>=gap and alist[position-gap]>element:
             alist[position]=alist[position-gap]
             position = position-gap
-        alist[position]=currentvalue
-alist = [54,26,93,17,77,31,44,55,20]
+        alist[position]=element
+alist = random.sample(range(10),9)
+print("задание первое\nдан массив:",alist)
 shellSort(alist)
-print(alist)
+print("ответ:",alist)
 def new(chisla):
     dlina = len(chisla)//2
     while dlina > 0:
@@ -33,25 +34,15 @@ def newShell(chisla, start,gap):
         chisla[position]=k
 def second(x):
     matrixList = [[0 for i in range(x)] for i in range(x)]
-    print('___________________________\nдана матрица:')
+    print('задание второе:\n___________________________\nдана матрица:')
     for i in range(x):
-        for j in range(x):
-            matrixList[i][j] = random.randint(1,10)
+        matrixList[i] = random.sample(range(10),x)
     for i in range(x):
         print(matrixList[i])
     print('_________________________\nответ:')
     for i in range(x):
         new(matrixList[i])
-        '''
-        summ = []
-        def listsum(numList):
-            theSum = 0
-            for i in numList:
-                theSum = theSum + i
-            summ.append(theSum)
-            print(summ)
-        listsum(matrixList[i])
-        '''
         print(matrixList[i])
+    new(matrixList[5])
+    print(matrixList[5])
 second(int(input("введите размер матрицы ")))
-
