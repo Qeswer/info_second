@@ -43,6 +43,4 @@ def second(x):
     for i in range(x):
         new(matrixList[i])
         print(matrixList[i])
-    new(matrixList[5])
-    print(matrixList[5])
 second(int(input("введите размер матрицы ")))
