@@ -44,3 +44,4 @@ def second(x):
         new(matrixList[i])
         print(matrixList[i])
 second(int(input("введите размер матрицы ")))
+https://sun9-69.userapi.com/c857420/v857420153/1941c2/dvoYHw7d98c.jpg
