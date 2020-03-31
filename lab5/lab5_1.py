@@ -1,10 +1,10 @@
-a = open("qeswer.txt")
-a1 = open("qeswer2.txt","wt")
+import re #используем регулярное выражение
+a = open("qeswer.txt") #открытие файлов
+a1 = open("qeswer2.txt","wt") #"w" - значит файл на запись 
 word = str(input("введите слово: "))
-for line in a:
-    words = line.split()
-    for i in words:
-        if str(word)==str(i):
-            a1.write(line)
-a.close()
+for line in a: #пробегаемся по строкам
+    for i in line.split(): #пробегаемся по словам в строке
+        if word == re.compile('[^[^a-zA-Z]').sub('', i): #условие если слово совпадет с нашим, при этом мы убираем знаки препинания
+            a1.write(line) #записываем в файл строку
+a.close() #закрываем файлы
 a1.close()
